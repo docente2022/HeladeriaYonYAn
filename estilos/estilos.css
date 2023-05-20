@@ -1,0 +1,21 @@
+*{margin: 0;
+padding: 0;}
+
+
+body{
+    background-color: beige;
+    font-family: 'Creepster', cursive;
+}
+ nav{
+    font-family: 'Aclonica', sans-serif;
+ }
+
+    .row .col img {
+    width: 275px;
+height: 200px;
+border-radius: 25px;
+border-style: dotted;
+padding: 20px;
+}
+
+ 

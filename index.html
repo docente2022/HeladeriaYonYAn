@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tienda de helados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Creepster&family=Hanalei&family=Hind:wght@300;400;500;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/estilos/estilos.css">
+  </head>
+
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="container-fluid">
+            <a class="navbar-brand collapse-horizontal " href="#">
+              <img src="./media/helado.png" alt="Logo" width="60" height="70" class="d-inline-block align-text-center-">
+              <span class="text-bg-dark">YonYan-Helados</span>
+            </a>
+          </div>
+
+          <li class="nav-item p-2">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item  p-2 dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Productos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"> Helados</a></li>
+              <li><a class="dropdown-item" href="#">Potes</a></li>
+              <li><a class="dropdown-item" href="#">Tortas Heladas</a></li>
+              <li><a class="dropdown-item" href="#">Paletas</a></li>
+              <li><a class="dropdown-item" href="#">Sin Tacc</a></li>
+
+            </ul>
+          <li class="nav-item p-2">
+            <a class="nav-link " href="#">Nosotros</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="nav-link " href="#">Contacto</a>
+          </li>
+          <!-- login y redes sociales -->
+          <ul class=" navbar-nav me-auto mb-2 mb-lg-0 p-2" >
+
+            <li>
+              <a class="nav-link " href="#"><a class="nav-link " href="#"><i class="fa-duotone fa-user-group fa-fade fa-lg" style="--fa-primary-color: #000000; --fa-secondary-color: #c71fb0;"></i> </a> </a>
+
+            </li>
+           <li>
+            <a class="nav-link " href="#"><a class="nav-link " href="#"><i class="fa-duotone fa-user-group fa-fade fa-lg" style="--fa-primary-color: #000000; --fa-secondary-color: #c71fb0;"></i> </a> </a>
+
+           </li> 
+          </ul>
+          
+        </ul>
+        <form class="d-flex" role="BUSCAR PRODUCTOS">
+          <input class="form-control me-2" type="search" placeholder="BUSCAR PRODUCTOS" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <div class="carrito p-2">
+          <i class="bi bi-cart-fill"></i>
+          <span class="cantidad-carrito"> 0</span>
+          <span class="total-carrito">$0.00</span>
+        </div>
+    
+       
+      </div>
+    </div>
+  </nav>
+      
+    </header>
+
+    <main class=" container">
+      <!-- titulo -->
+      <h1 class="text-center p-4">Tienda de helados</h1>
+   <!-- sección de productos -->
+      <div class="row row-cols-4">
+        <div class="col">
+          <div class=" card p-2" style="width: 18rem">
+            <img src="./media/helado-de-vainilla.jpg" class="card-img-top p-2" alt="Helado 1">
+            <h2 class="card-title">Helado de vainilla</h2>
+            <p class="card-text">Helado suave y cremoso de vainilla</p>
+            <p>Precio: $250</p>
+            <button class="agregar btn btn-primary" data-nombre="Helado de vainilla" data-precio="250">Agregar al carrito</button>
+         </div>
+        </div>
+          <div class="col">
+            <div class=" card  p-2" style="width: 18rem" >
+              <img src="/media/helado-de-fresa.avif" class="card-img-top p-2" alt="Helado 2">
+              <h2 class="card-title"> Helado de fresa</h2>
+              <p class="card-text">Helado cremoso de fresa con pedazos de fruta</p>
+              <p>Precio: $300</p>
+              <button class="agregar btn btn-primary" data-nombre="Helado de fresa" data-precio="300">Agregar al carrito</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class=" card p-2" style="width: 18rem">
+              <img src="/media/helado-chocolate.jpg" class="card-img-top p-2" alt="Helado 3">
+              <h2 class="card-title"> Helado de chocolate</h2>
+              <p class="card-text">Helado cremoso de chocolate oscuro</p>
+              <p>Precio: $350</p>
+              <button class="agregar btn btn-primary" data-nombre="Helado de chocolate" data-precio="350">Agregar al carrito</button>
+            </div>
+
+          </div>
+          <div class="col">
+            <div class=" card p-2" style="width: 18rem">
+              <img src="./media/menta-granizadajpg.webp" class="card-img-top p-2" alt="Helado 4">
+              <h2 class="card-title"> Helado de Menta granizada</h2>
+              <p class="card-text">Helado de menta con trozos de chocolates.</p>
+              <p>Precio: $ 400</p>
+              <button class="agregar btn btn-primary" data-nombre="Helado de fudge brownie" data-precio="400">Agregar al carrito</button>
+            </div>  
+          </div>
+          <div class="col">
+            <div class=" card p-2" style="width: 18rem">
+              <img src="./media/helado-de-vainilla.jpg" class="card-img-top p-2" alt="Helado 5">
+              <h2 class="card-title">Helado de vainilla</h2>
+              <p class="card-text">Helado suave y cremoso de vainilla</p>
+              <p>Precio: $250</p>
+              <button class="agregar btn btn-primary" data-nombre="Helado de vainilla" data-precio="250">Agregar al carrito</button>
+           </div>
+          </div>
+            <div class="col">
+              <div class=" card p-2 " style="width: 18rem" >
+                <img src="./media/Helado-de-dulce-de-leche-.jpg" class="card-img-top p-2" alt="Helado 6">
+                <h2 class="card-title"> Helado de dulce de leche</h2>
+                <p class="card-text">Helado cremoso con un sabor inigualable</p>
+                <p>Precio: $300</p>
+                <button class="agregar btn btn-primary" data-nombre="Helado de fresa" data-precio="300">Agregar al carrito</button>
+              </div>
+            </div>
+            <div class="col">
+              <div class=" card p-2" style="width: 18rem">
+                <img src="./media/" class="card-img-top " alt="Helado 7">
+                <h2 class="card-title"> Helado de chocolate</h2>
+                <p class="card-text">Helado cremoso de chocolate oscuro</p>
+                <p>Precio: $350</p>
+                <button class="agregar btn btn-primary" data-nombre="Helado de chocolate" data-precio="350">Agregar al carrito</button>
+              </div>
+  
+            </div>
+            <div class="col">
+              <div class=" card p-2 " style="width: 18rem">
+                <img src="./media/menta-granizadajpg.webp" class="card-img-top p-2" alt="Helado 8">
+                <h2 class="card-title"> Helado de Menta granizada</h2>
+                <p class="card-text">Helado de menta con trozos de chocolates.</p>
+                <p>Precio: $ 400</p>
+                <button class="agregar btn btn-primary" data-nombre="Helado de fudge brownie" data-precio="400">Agregar al carrito</button>
+              </div>  
+            </div>
+
+
+      </div>
+      <!-- fin seccion Productos -->
+      <div class="row">
+        <ul class="productos-carrito">
+          <p class=" text-center display-6 pt-4">Seleccionaste:</p>
+          <!-- Los productos agregados al carrito se mostrarán aquí -->
+        </ul>
+        <div class="total-pagar">
+          <p>Total a pagar: <span class="monto-total">$0.00</span></p>
+        </div>
+      
+        <button class="finalizar-compra btn btn-outline-success">Finalizar compra</button>
+
+
+      </div>
+              
+        </div>
+      
+    </main>
+
+    <footer class="row p-4">
+      <p>Derechos reservados &copy; 2023</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
