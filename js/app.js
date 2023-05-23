@@ -29,7 +29,30 @@ botonesAgregar.forEach((boton) => {
      const botonEliminar = document.createElement('button');
      botonEliminar.textContent = 'Eliminar';
      botonEliminar.addEventListener('click', () => {
-       // Remover el producto del carrito
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: '¿ Estás seguro que quieres eliminar el producto?',
+        text: "El producto se eliminará de tu carrito",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, elimínalo',
+        cancelButtonText: 'No, cancélalo',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Producto eliminado',
+            'Puedes agregar otro.',
+            'success'
+          )
+           // Remover el producto del carrito
        productosEnCarrito--;
        precioTotal -= precio;
  
@@ -38,6 +61,19 @@ botonesAgregar.forEach((boton) => {
  
        productosCarrito.removeChild(producto);
        montoTotal.textContent = `$${precioTotal.toFixed(2)}`;
+          
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Canceladpo',
+            'El producto sigue en el carrito :)',
+            'error'
+          )
+        }
+      })
+      
      });
  
      producto.appendChild(botonEliminar);
@@ -51,7 +87,12 @@ botonesAgregar.forEach((boton) => {
 
 finalizarCompraBtn.addEventListener('click', () => {
   // Mostrar mensaje de agradecimiento
-  alert('¡Gracias por tu compra!');
+  Swal.fire({
+    icon: 'success',
+    title: 'Helados Yon-YAn',
+    text: '¡ Gracias por tu compra!',
+    footer: '<a href="/index.html">Volver a Comprar.</a>'
+  })
 
   // Reiniciar el carrito
   productosEnCarrito = 0;
