@@ -1,14 +1,38 @@
+
+
+//agregar al dom elementos mediante json
+fetch('./js/productos.json')
+.then(response => response.json())
+.then(data => {
+  // Obtener el contenedor de productos
+  const productosContainer = document.querySelector('#productos-container');
+console.log(data)
+  // Recorrer los productos y generar el contenido
+  data.productos.forEach(producto => {
+    // Crear elementos HTML para mostrar la información
+   const productoDiv = document.createElement('div');
+productoDiv.innerHTML = `
+<div class="col">
+  <div class="card p-2" style="width: 18rem">
+    <img src="${producto.imagen}" class="card-img-top p-2" alt="Helado 1">
+    <h2 class="card-title">${producto.nombre}</h2>
+    <p class="card-text">${producto.descripcion}</p>
+    <p>Ingredientes:${producto.ingredientes.join(', ')}</p>
+    <p>Precio: $${producto.precio}</p>
+  </div>
+</div>
+`;
+
+// Crear el botón de agregar al carrito
+const botonAgregar = document.createElement('button');
+botonAgregar.textContent = 'Agregar al carrito';
+botonAgregar.classList.add('agregar', 'btn', 'btn-primary');
+botonAgregar.dataset.nombre = producto.nombre;
+botonAgregar.dataset.precio = producto.precio;
+
 const botonesAgregar = document.querySelectorAll('.agregar');
-const carrito = document.querySelector('.carrito');
-const cantidadCarrito = document.querySelector('.cantidad-carrito');
-const totalCarrito = document.querySelector('.total-carrito');
-const productosCarrito = document.querySelector('.productos-carrito');
-const finalizarCompraBtn = document.querySelector('.finalizar-compra');
-const montoTotal = document.querySelector('.monto-total');
 
-let productosEnCarrito = 0;
-let precioTotal = 0;
-
+// Agregar evento click al botón de agregar al carrito
 botonesAgregar.forEach((boton) => {
   boton.addEventListener('click', () => {
     const nombre = boton.dataset.nombre;
@@ -28,6 +52,7 @@ botonesAgregar.forEach((boton) => {
      // Agregar el botón de eliminar
      const botonEliminar = document.createElement('button');
      botonEliminar.textContent = 'Eliminar';
+     
      botonEliminar.addEventListener('click', () => {
       const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -67,7 +92,7 @@ botonesAgregar.forEach((boton) => {
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
-            'Canceladpo',
+            'Cancelado',
             'El producto sigue en el carrito :)',
             'error'
           )
@@ -84,6 +109,30 @@ botonesAgregar.forEach((boton) => {
     montoTotal.textContent = `$${precioTotal.toFixed(2)}`;
   });
 });
+
+// Agregar el botón al elemento productoDiv
+productoDiv.querySelector('.card').appendChild(botonAgregar);
+
+
+    // Agregar el elemento al contenedor de productos
+    productosContainer.appendChild(productoDiv);
+  });
+})
+.catch(error => {
+  console.error('Error al cargar el archivo JSON:', error);
+});
+
+
+
+const carrito = document.querySelector('.carrito');
+const cantidadCarrito = document.querySelector('.cantidad-carrito');
+const totalCarrito = document.querySelector('.total-carrito');
+const productosCarrito = document.querySelector('.productos-carrito');
+const finalizarCompraBtn = document.querySelector('.finalizar-compra');
+const montoTotal = document.querySelector('.monto-total');
+
+let productosEnCarrito = 0;
+let precioTotal = 0;
 
 finalizarCompraBtn.addEventListener('click', () => {
   // Mostrar mensaje de agradecimiento

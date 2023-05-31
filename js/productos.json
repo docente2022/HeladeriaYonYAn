@@ -1,0 +1,29 @@
+{
+    "productos": [
+      {
+        "nombre": "Helado de vainilla",
+        "descripcion": "Delicioso helado de vainilla cremoso y suave.",
+        "precio": 350,
+        "disponible": true,
+        "ingredientes": ["leche", "azúcar", "vainilla"],
+        "imagen": "./media/helado-de-vainilla.jpg"
+      },
+      {
+        "nombre": "Helado de fresa",
+        "descripcion": "Refrescante helado de fresa con trozos de fruta.",
+        "precio": 450,
+        "disponible": true,
+        "ingredientes": ["leche", "azúcar", "fresas"],
+        "imagen": "./media/helado-de-fresa.avif"
+      },
+      {
+        "nombre": "Helado de chocolate",
+        "descripcion": "Irresistible helado de chocolate oscuro.",
+        "precio": 400,
+        "disponible": true,
+        "ingredientes": ["leche", "azúcar", "chocolate"],
+        "imagen": "./media/helado-chocolate.jpg"
+      }
+    ]
+  }
+  
