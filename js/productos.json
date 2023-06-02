@@ -23,6 +23,14 @@
         "disponible": true,
         "ingredientes": ["leche", "azúcar", "chocolate"],
         "imagen": "./media/helado-chocolate.jpg"
+      },
+      {
+        "nombre": "Helado de Dulce de leche",
+        "descripcion": "Irresistible helado de dulce de leche.",
+        "precio": 400,
+        "disponible": true,
+        "ingredientes": ["leche", "azúcar", "dulce de leche"],
+        "imagen": "./media/Helado-de-dulce-de-leche-.jpg"
       }
     ]
   }

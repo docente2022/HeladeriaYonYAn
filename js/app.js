@@ -10,28 +10,32 @@ console.log(data)
   // Recorrer los productos y generar el contenido
   data.productos.forEach(producto => {
     // Crear elementos HTML para mostrar la información
-   const productoDiv = document.createElement('div');
-productoDiv.innerHTML = `
-<div class="col">
-  <div class="card p-2" style="width: 18rem">
+    const productoDiv = document.createElement('div');
+    productoDiv.innerHTML = `
+    <div class="col">
+    <div class="card p-2" style="width: 18rem">
     <img src="${producto.imagen}" class="card-img-top p-2" alt="Helado 1">
     <h2 class="card-title">${producto.nombre}</h2>
     <p class="card-text">${producto.descripcion}</p>
     <p>Ingredientes:${producto.ingredientes.join(', ')}</p>
     <p>Precio: $${producto.precio}</p>
-  </div>
-</div>
-`;
-
-// Crear el botón de agregar al carrito
-const botonAgregar = document.createElement('button');
-botonAgregar.textContent = 'Agregar al carrito';
-botonAgregar.classList.add('agregar', 'btn', 'btn-primary');
-botonAgregar.dataset.nombre = producto.nombre;
-botonAgregar.dataset.precio = producto.precio;
-
-const botonesAgregar = document.querySelectorAll('.agregar');
-
+    </div>
+    </div>
+    `;
+    
+    // Agregar el elemento al contenedor de productos
+    // Crear el botón de agregar al carrito
+    const botonAgregar = document.createElement('button');
+    botonAgregar.textContent = 'Agregar al carrito';
+    botonAgregar.classList.add('agregar-carrito', 'btn', 'btn-primary');
+    botonAgregar.dataset.nombre = producto.nombre;
+    botonAgregar.dataset.precio = producto.precio;
+    
+    // Agregar el botón al elemento productoDiv
+    productoDiv.querySelector('.card').appendChild(botonAgregar);
+    productosContainer.appendChild(productoDiv);
+  });
+  const botonesAgregar = document.querySelectorAll('.agregar-carrito');
 // Agregar evento click al botón de agregar al carrito
 botonesAgregar.forEach((boton) => {
   boton.addEventListener('click', () => {
@@ -53,7 +57,7 @@ botonesAgregar.forEach((boton) => {
      const botonEliminar = document.createElement('button');
      botonEliminar.textContent = 'Eliminar';
      
-     botonEliminar.addEventListener('click', () => {
+      botonEliminar.addEventListener('click', () => {
       const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success',
@@ -110,19 +114,11 @@ botonesAgregar.forEach((boton) => {
   });
 });
 
-// Agregar el botón al elemento productoDiv
-productoDiv.querySelector('.card').appendChild(botonAgregar);
-
-
-    // Agregar el elemento al contenedor de productos
-    productosContainer.appendChild(productoDiv);
-  });
 })
+
 .catch(error => {
   console.error('Error al cargar el archivo JSON:', error);
 });
-
-
 
 const carrito = document.querySelector('.carrito');
 const cantidadCarrito = document.querySelector('.cantidad-carrito');
