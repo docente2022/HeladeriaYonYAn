@@ -17,4 +17,17 @@ border-radius: 25px;
 border-style: dotted;
 padding: 20px;
 }
+ .agregados{
+    width: 400px;
+border-style: groove;
+    border-color: blue;
+    
+}
+/* .caja{
+    
+} */
+footer{
+    border-top: solid;
+    background-color: darksalmon;
+}
 
